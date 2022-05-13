@@ -1,0 +1,14 @@
+.block {
+  transform: ;
+}
+
+.inline {
+  display: inline-block; /* display: block; и т.д. */
+  transform: ;
+}
+
+.block::before {
+  display: inline-block; /* display: block; и т.д. */
+  content: "";
+  transform: ;
+}

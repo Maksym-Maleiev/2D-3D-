@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D и 3D трансформации</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h2>CSS Transform</h2>
+
+        <h3>translate (x,y)</h3>
+        <div class="scene">
+          <div class="example translate">translate</div>
+        </div>
+        <p class="content">
+          translate - это элемент на новое место, перемещая относительно
+          изначального положения объекта вправо и вниз, используя координаты X и
+          Y. Записывается следующим образом translate (х,y);
+        </p>
+
+        <h3>scale (x,y)</h3>
+        <div class="scene">
+          <div class="example scale">scale</div>
+        </div>
+        <p class="content">
+          scale - маштабирует элементы, делая их больше или меньше. По умолчанию
+          значения указаны как единица (1) - это реальный размер объекта. Первое
+          значение маштабирует элемент по ширине, второе - по высоте.
+          Отрицательные значения отображают элемент зеркально.
+        </p>
+
+        <h3>rotate (угол+deg)</h3>
+        <div class="scene">
+          <div class="example rotate">rotate</div>
+        </div>
+        <p class="content">
+          rotate - поворачивает элементы на заданное количество градусов,
+          отрицательные значения поворачивают элемент против часовой стрелки,
+          положительные - по часовой стрелке. Записываются значения как градус
+          поворота и deg.
+        </p>
+
+        <h3>skew (x-угол+deg, y-угол+deg)</h3>
+        <div class="scene">
+          <div class="example skew">skew</div>
+        </div>
+        <p class="content">
+          skew - деформирует (искажает) стороны объекта относительно
+          координатных осей. Если указано одно значение, второе будет определено
+          браузером автоматически. Записывается значение как градус поворота и
+          deg.
+        </p>
+
+        <h3>matrix (a,c,b,d,x,y)</h3>
+        <div class="scene">
+          <div class="example matrix">matrix</div>
+        </div>
+        <p class="content">
+          matrix(a,c,b,d,x,y) - позволяет объединить несколько функций
+          2D-трансформаций в одной. В качестве трансформации допустимы поворот,
+          маштабирование, наклон (деформация) и изменение положения. Свойства
+          указываются без единиц измерения.
+        </p>
+
+        <h3>
+          Множественные 2D <br />
+          трансформации
+        </h3>
+        <div class="scene">
+          <div class="example example-box multi">
+            translate <br />
+            scale <br />
+            rotate
+          </div>
+        </div>
+        <p class="content">
+          Так же, подобного можно добиться используя множественные
+          трансформации. А именно записать несколько значений в одно свойство
+          transform.
+        </p>
+
+        <h3>transform-origin</h3>
+        <div class="scene">
+          <div class="example example-box transform-origin">
+            transform <br />
+            origin
+          </div>
+        </div>
+        <p class="content">
+          transform-origin - позволяет сместить центр трансформации,
+          относительно которого происходит изменение положения/размера/формы
+          элемента.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Perspective</h2>
+
+        <h3>perspective, perspective-origin</h3>
+        <div class="scene scene-3d">
+          <div class="example example-box perspective">
+            perspective, perspective-origin
+          </div>
+        </div>
+        <p class="content">
+          perspective, perspective-origin - установка глубины и смена точки
+          начала координат.
+        </p>
+
+        <h3>translate3d (x,y,z)</h3>
+        <div class="scene scene-3d">
+          <div class="example translate-3d">translate3d</div>
+        </div>
+        <p class="content">
+          translate3D - по аналогии со своим 2D братом это значение задает
+          перемещение элемента, но, в 3D-пространстве. Помимо оси X и Y
+          добавляется ось Z.
+        </p>
+
+        <h3>scale3d (x,y,z)</h3>
+        <div class="scene scene-3d">
+          <div class="example scale-3d">scale3d</div>
+        </div>
+        <p class="content">
+          scale3D - задает трехмерное маштабирование по одной из осей X,Y,Z.
+        </p>
+
+        <h3>rotate3d (x,y,z,deg)</h3>
+        <div class="scene scene-3d">
+          <div class="example rotate-3d">rotate3d</div>
+        </div>
+        <p class="content">
+          rotate3d - вращает элемент относительно трех осей. Элемент
+          поворачивается под углом, задаваемым последним параметром относительно
+          вектора направления X,Y,Z.
+        </p>
+
+        <h3>matrix3d (n,n,n,n,n,n,n,n,n,n)</h3>
+        <div class="scene scene-3d">
+          <div class="example matrix-3d">matrix3d</div>
+        </div>
+        <p class="content">
+          matrix3d - задает трехмерное преобразование как однородную матрицу
+          размером 4х4 с шестнадцатью значениями в столбцах.
+        </p>
+
+        <h3>Множественные 3D трансформации</h3>
+        <div class="scene scene-3d">
+          <div class="example example-box multi-3d">translate3d rotate3d</div>
+        </div>
+        <p class="content">
+          Запись нескольких 3D значений в одно свойство transform.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>transform-style</h2>
+
+        <h3>transform-style</h3>
+        <div class="scene scene-transform-style">
+          <div class="example example-box transform-style">
+            transform <br />
+            style
+          </div>
+        </div>
+        <p class="content">transform-style - задает стиль трансформации.</p>
+
+        <h3>Backface-visibility</h3>
+        <div class="flip-body">
+          <div class="flip-front">front</div>
+          <div class="flip-back">back</div>
+        </div>
+        <p class="content">
+          Свойство определяет, будет ли видна пользователю обратная сторона
+          элемента.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
